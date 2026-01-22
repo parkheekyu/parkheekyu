@@ -1,0 +1,8 @@
+{
+  "name": "디하클전자책",
+  "description": "디지털 노마드 하이클래스를 위한 프리미엄 지식 공유 플랫폼, 디하클전자책입니다.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
