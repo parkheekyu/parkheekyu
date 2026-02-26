@@ -10,10 +10,11 @@ import MyEbooks from './components/MyEbooks';
 import CreatorStudio from './components/CreatorStudio';
 import Checkout from './components/Checkout';
 import EbookStore from './components/EbookStore';
+import JumpGame from './components/JumpGame';
 import { CATEGORIES, MOCK_EBOOKS } from './constants';
 import { EbookItem } from './types';
 
-export type Page = 'home' | 'login' | 'signup' | 'detail' | 'my' | 'studio' | 'checkout' | 'store' | 'guide';
+export type Page = 'home' | 'login' | 'signup' | 'detail' | 'my' | 'studio' | 'checkout' | 'store' | 'guide' | 'game';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -59,14 +60,15 @@ const App: React.FC = () => {
   if (currentPage === 'studio') return <CreatorStudio onBack={() => navigateTo('home')} />;
   if (currentPage === 'checkout' && selectedProduct) 
     return <Checkout product={selectedProduct} onBack={() => navigateTo('detail')} onComplete={() => navigateTo('my')} />;
-  if (currentPage === 'store') 
+  if (currentPage === 'store')
     return (
-      <EbookStore 
-        onBack={() => navigateTo('home')} 
+      <EbookStore
+        onBack={() => navigateTo('home')}
         onDetail={(item) => navigateTo('detail', item)}
         initialCategory={selectedCategory}
       />
     );
+  if (currentPage === 'game') return <JumpGame onBack={() => navigateTo('home')} />;
 
   return (
     <div className="min-h-screen bg-white pb-0 text-gray-900 text-[1.01rem]">

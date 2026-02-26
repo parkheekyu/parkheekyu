@@ -28,6 +28,13 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onSearch }) => {
             <button onClick={() => onNavigate('store')} className="hover:text-brand-primary transition-colors">전자책 스토어</button>
             <button onClick={() => onNavigate('my')} className="hover:text-brand-primary transition-colors">내 서재</button>
             <button onClick={() => onNavigate('studio')} className="hover:text-brand-primary transition-colors">작가 스튜디오</button>
+            <button
+              onClick={() => onNavigate('game')}
+              className="flex items-center space-x-1.5 text-brand-primary hover:text-brand-secondary transition-colors"
+            >
+              <span>🎮</span>
+              <span>점프 게임</span>
+            </button>
           </nav>
         </div>
         
